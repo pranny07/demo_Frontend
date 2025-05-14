@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guess the number</h1>
+    <input type="text" id="input">
+    <button onclick="numchange()">Check</button>
+    <p id="result"> Your guess Right/Wrong</p>
+    <p id="score">Your score: 9<p>
+</body>
+<script>
+    var input= document.getElementById("input")
+    var result=document.getElementById("result")
+    var score=document.getElementById("score")
+    var randomnum= Math.floor(Math.random()*10)+1
+    console.log(randomnum)
+    var scorepoints=9
+    function numchange(){
+        if (randomnum== Number(input.value)){
+            result.textContent="Right"
+            alert("YOu HAve Won!!")
+        }
+        else{
+            result.textContent="Wrong"
+            scorepoints=scorepoints-1
+            if (scorepoints > 0){
+                score.textContent="score: "+scorepoints
+            }
+            else{
+                score.textContent="You LOst THe Game :/ "
+            }
+            
+        }
+    }
+</script>
+</html>
+<style>
+    body {
+        background-color: #0d0d0d;
+        color: #f0f0f0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    h1 {
+        color: #00ffff;
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        font-size: 3em;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        font-size: 1.2em;
+        border: 2px solid #00ff99;
+        background-color: #111;
+        color: #00ffcc;
+        border-radius: 8px;
+        outline: none;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        background-color: #00ff99;
+        border: none;
+        color: #0d0d0d;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+        transition: 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background-color: #00cc7a;
+        box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-top: 15px;
+        text-shadow: 0 0 5px #ffffff22;
+    }
+
+    #result {
+        color: #ff4dff;
+        font-weight: bold;
+    }
+
+    #score {
+        color: #00ffcc;
+    }
+</style>
+
+
+
+
+
+// <!-- <html lang="en">
+// <head>
+//     <title>Document</title>
+// </head>
+// <body>
+//     <input type="text" id="input">
+//     <button onclick="guessnum()">C H E C K</button>
+//     <h3 id="score">YOUR SCORE: </h3>
+
+// </body>
+// <script>
+//     var a=Math.floor(Math.random()*10)+1
+//     console.log("ran num : "+a)
+//     function guessnum(){
+
+//         console.log("hi")
+//         var guessingnum= document.getElementById("input")
+//         var guessingnum1= Number(guessingnum.value)
+//         var result= document.getElementById("score")
+//         var result1= result.textContent
+        
+//         if (guessingnum1==a) {
+//             result.textContent="won"
+//         }
+//         else{
+//             result.textContent="try again"
+//         }
+//     }
+// </script>
+// </html> -->
